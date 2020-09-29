@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="description" content="FCC Responsive Web Projects, Project 1, Tribute Page">
+		<meta name="keywords" content="HTML, CSS, FCC">
+		<meta name="author" content="bgq007">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Project 1 - Tribute Page - FCC</title>
+		<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet"> 
+
+<style>
+/* Custom CSS */
+
+html {
+	background-color: #061F33 !important;
+}
+
+.body-container-full {
+	padding: 0 !important;
+}
+
+nav {
+	background-color: #061F33 /*#001a33*/;
+	width: 100%;
+	height: 50px;
+	position: fixed !important;
+	z-index: 100;
+}
+
+nav > a {
+	color: white;
+	float: right;
+	padding: 15px 20px 0 0;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+nav > a:hover {
+	color: 	#8D2D2F !important;
+}
+
+
+header > div img {
+	width: 100%;
+	margin-bottom: -4px !important;
+}
+
+.header-container-full {
+	position: relative !important;
+	top: 50px ;
+	padding: 0 !important;
+}
+
+#title > h1, #title > h2 {
+	padding: 0;
+	margin: 0;
+}
+
+#title {
+	background-color: #061F33;
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+
+.main-container-full {
+	background-color: #8D2D2F !important;
+	margin-top: 50px !important;
+	padding: 0 !important;
+}
+
+#flex-container-1, #img-div {
+	background-color: initial;
+	border: initial;
+}
+
+.flex-box {
+	box-shadow: initial !important;
+	border-radius: initial !important;
+	background-color: initial !important;
+}
+
+#img-div {
+	justify-content: center;
+}
+
+.flex-item {
+	margin: 20px;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5), 0 20px 20px 0 rgba(0, 0, 0, 0.19) !important;
+	padding: .5em !important;
+	background-color: #fff !important;
+}
+
+#image { 
+	display: block;
+	max-width: 500px;
+	width: 100%;
+	height: auto;
+}
+
+#img-caption {
+	max-width: 450px;
+	width: 90%;
+	height: auto;
+	text-align: justify;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+}
+
+#tribute {
+	background-color: #ffffe6;
+	padding: 20px;
+	z-index: 1;
+	color: #061F33;
+	text-align: center;
+}
+
+#tribute-info {
+	max-width: 700px;
+	padding: 10px;
+	margin: auto;
+	line-height: 1.5em;
+}
+
+#tribute-info p {
+	text-align: justify;
+}
+
+#tribute-info ul {
+	text-align: justify;
+	line-height: 1.5em;
+}
+
+#tribute-info li {
+	padding-bottom: 10px;
+	padding-right: 30px;
+}
+
+blockquote {
+	background-color: #fff /*#8D2D2F*/;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5), 0 20px 20px 0 rgba(0, 0, 0, 0.19) !important;
+	padding: 1em !important;
+	font-family: Georgia, serif;
+   font-size: 18px;
+   font-style: italic;
+   position: relative;
+   color: #061F33 /*#383838*/;
+}
+
+blockquote:before {
+    display: block;
+    /padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    /top: -20px;
+    color: #061F33/*#7a7a7a*/;
+}
+
+blockquote cite {
+    color: #061F33 /*#999999*/;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+
+#facts > li {
+	width: 70%;
+	margin: auto !important;
+	text-align: left;
+}
+
+hr {
+	/width: 2%;
+	border: #061F33 !important;
+}
+
+hr:before {
+	content:"\2605\2605\2605\2605\2605\2605\2605\2605\2605\2605\2605";
+}
+
+.small-text {
+	font-size: 11px !important;
+	margin-bottom: 0 !important;
+	
+}
+
+footer {
+	background-color: 	#8D2D2F !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+.footer-container-full {
+	background-color: 	#061F33 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: center;
+	font-size: x-small;
+	color: white;
+}
+
+a {
+	color: #8D2D2F;
+}
+
+.small-right {
+	font-size: small;
+	text-align: right;
+}
+
+/* Media Queries */
+
+/* These are the Bootstrap Break Points */
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* My custom under 240px get a larger device */
+@media (max-width: 240px) {
+	html {
+		background-color: white !important;
+	}
+	
+	header, main, footer {
+		display: none;
+	}
+	
+	body {
+		margin-top: 50% !important;
+		background-color: white !important;
+}
+
+	body:before {
+		content: "You Need A Larger Device";
+		visibility: visible;
+		font-size: medium;
+	}
+	
+	body > * {
+		visibility: hidden !important;
+	}
+}
+
+/* Extra Small devices (portrait up to 575px) */
+@media (max-width: 575px) { 
+	html {
+	background-color: #061F33 !important;
+}
+	
+	.flex-box{
+		flex-direction: column !important;
+	}
+	
+	#img-caption {
+		max-width: 500px !important;
+		width: 80%;
+		margin-left: 2em;
+		margin-right: 2em;
+	}
+	
+	nav {
+		position: fixed !important;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+	
+	
+	.flex-box{
+		flex-direction: column !important;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	
+	.flex-box{
+		flex-direction: row !important;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+}
+
+
+/* From Template */
+
+/* HTML Built in Tags */
+html {
+	background-color: #111; /* black */
+}
+
+body {
+    /padding: 20px;
+    margin: 0;
+    background-color: #222; /* very dark grey */
+}
+
+/* Containers */
+.main-container, .body-container, .footer-container, .header-container {
+  padding: 20px;
+	margin: 0;
+  background-color: #456; /* blue grey */
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.main-container-full, .body-container-full, .footer-container-full, .header-container-full {
+  /* Need to remove padding from parent for full width & height - use an ID */
+  padding: 20px;
+  background-color: #456; /* blue grey */
+  margin: 0;
+}
+
+.flex-container {
+  min-height: 20px;
+  padding: 20px;
+	margin: 0;
+  background-color: #aaa; /* grey */
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.flex-container-full {
+	/* Need to remove padding from parent for full width & height - use an ID */
+  padding: 20px;
+	margin: 0;
+  background-color: #aaa; /* grey */
+}
+
+/* Flex Box */
+.flex-box {
+  display: flex;
+	flex-direction: row; /*  */
+	flex-wrap: ; /* */
+	flex-flow:  ; /* */
+	flex-grow: ; /* */
+	flex-shrink: ; /* */
+	flex-basis: ; /* */
+	align-items: center; /* */
+	justify-content: space-evenly; /* */
+	align-content: center; /* */
+	align-self: center; /* */
+	justify-items: center; /* */
+	justify-self: center; /* */
+  padding: 10px;
+  background-color: #ccc; /* light grey */
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+/* Flex Items */
+.flex-item {
+		flex-grow: ; /* */
+		flex-shrink: ; /* */
+		flex-basis: ; /* */
+		align-items: center; /* */
+		justify-content: space-evenly; /* */
+		align-content: center; /* */
+		align-self: center; /* */
+		justify-items: center; /* */
+		justify-self: center; /* */
+		text-align: center;
+		height: ;
+    padding: 20px;
+    background-color: #ddd; /* almost white */
+    border: 1px solid #e3e3e3;
+    border-radius: 4px !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+/* This is a generic visual guide */
+.well {
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #666; /* dark grey */
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+
+
+
+
+</style>
+	</head>
+	
+	<body id="main">
+		
+		
+		<div id="" class="body-container-full"> 
+		
+			
+		<header id="" class="">
+			<nav> <a href="#">Home</a> </nav>
+			<div id="" class="header-container-full>
+				<img src="og-magdi-yacoub-5684.jpg">
+				<div id="title"><h1>Magdy Yacob</h1>
+					<h2><em>40th Doctor of Heart Transplant</em><h2>
+				</div>
+			</div>
+
+		</header>
+				
+			
+		<main id="" class="">
+			
+			<div id="" class="main-container-full"> 
+				
+				
+				<section id="image-section">
+				
+				<div id="flex-container-1" class="flex-container-full"> 
+					
+  				<div id="img-div" class="flex-box">
+    				<div class="flex-item">
+						<img id="image" src="b71ebbf0-3ec9-4454-ac1a-a59cb8afaa82.jpg">
+						</div>
+		
+    				<div id="img-caption" class="flex-item">
+						<p><strong>Magdy Yacob.</strong> (16 November 1935):</p>
+						<p>an Egyptian-British retired professor of cardiothoracic surgery at Imperial College London, best known for his early work in repairing heart valves with surgeon Donald Ross, adapting the Ross procedure, where the diseased aortic valve is replaced with the person's own pulmonary valve, devising the arterial switch operation (ASO) in transposition of the great arteries, and establishing the heart transplantation centre at Harefield Hospital in 1980 with a heart transplant for Derrick Morris, who at the time of his death was Europe's longest-surviving heart transplant recipient. Yacoub subsequently performed the UK's first combined heart and lung transplant in 1983.</p>
+						
+						
+					</div>
+    			
+  				</div>
+				</div>
+			</section>
+				<section id="tribute">
+					<div id="tribute-info"> 
+
+
+
+
+
+						
+						<h2>Magdy Yacob (1935) <br/>
+                                                40th Doctor of Heart Transplant 
+							</h2>
+						
+
+						<h3>Fast Facts</h3>
+							<ul id="facts">
+								<li><strong>Birth:</strong> 16 November 1935</li>
+								<li><strong>Term of Office:</strong> September 14, 1901–March 3, 1909</li>
+								<li><strong>Number of Terms Elected:</strong> 1 term</li>
+								<li><strong>First Lady:</strong> Edith Kermit Carow</li>
+								</ul>
+						<h3>Fun Fact</h3>
+						<p>When Theodore Roosevelt was not nominated by the Republican Party to run for president again in 1912, he broke away and created a new party which was nicknamed the Bull Moose Party.</p>
+<h3>Major Events While In Office</h3>
+						<ul>
+							<li><strong>Panama Canal Rights Acquired (1904):</strong> The U.S. earned the right to occupy the Canal Zone in Panama, leading the way to the construction of the Panama Canal, which it would control until 1979.</li>
+							<li><strong>Roosevelt Corollary to the Monroe Doctrine (1904-1905):</strong> The Monroe Doctrine declared that foreign encroachment into the Western Hemisphere would not be tolerated. As President, Roosevelt added that the U.S. was responsible for enforcing the Monroe Doctrine in Latin America, with force if necessary.</li>
+							<li><strong>Russo-Japanese War (1904-1905):</strong> Japan's campaign to claim Port Arthur on the coast of Manchuria from the Russians began a brief but devastating war. The heavy artillery and battle methods used foreshadowed the conditions of modern warfare that would come of age in World War I.</li>
+							<li><strong>Nobel Peace Prize (1906):</strong> Roosevelt was one of a handful of presidents to win the Nobel Peace Prize. This award honored his efforts to resolve the Russo-Japanese War and his work for international arbitration.</li>
+							<li><strong>San Francisco Earthquake (1906):</strong> San Fransisco's massive earthquake destroyed almost 30,000 buildings and left many of the citizens homeless.</li>
+							</ul>
+<blockquote>It is hard to fail, but it is worse never to have tried to succeed.<br/><cite>Theodore Roosevelt</cite></blockquote>
+					</div>
+					<hr>
+					<p class="small-text">Details for this section come from <a href="https://www.thoughtco.com/theodore-roosevelt-fast-facts-105369" target:"_blank">ThoughtCo</a></p>
+				</section>
+			</div>
+		</main>
+			
+				
+		<footer class="well"> 
+			
+			
+			<div class="footer-container-full">
+				
+				<p id="footer" class="text-right">Quick website by BP for <a href="https://topicsinenglish.com/ar/%D9%88%D8%B5%D9%81-%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9-%D9%85%D8%B4%D9%87%D9%88%D8%B1%D8%A9-%D8%A8%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D9%84%D9%8A%D8%B2%D9%8A/" target="_blank">freeCodeCamp</a></p>
+			</div>
+		</footer>
+		</div>
+	</body>
+</html>
